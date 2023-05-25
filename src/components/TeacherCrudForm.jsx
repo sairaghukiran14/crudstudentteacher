@@ -25,7 +25,7 @@ const TeacherCrudForm = () => {
   // CREATE USER
   const CreateTeacher = () => {
     if (tedit === "false") {
-      setTeachers((prevState) => [...prevState, { teacher }]);
+      setTeachers([...teachers, teacher]);
       setTeacher({ name: "", teachID: "", teachSubj: "", password: "" });
     } else {
       teachers.find((u) => u.teachID === teacher.teachID)
