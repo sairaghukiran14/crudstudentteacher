@@ -3,7 +3,7 @@ import { store } from "../App";
 
 const TeacherCrudForm = () => {
   const { teachers, setTeachers } = useContext(store);
-  const [edit, setEdit] = useState("false");
+  const [tedit, setTedit] = useState("false");
   const [t, setT] = useState({});
 
   const [isDisabled, setIsDisabled] = useState(false);
@@ -24,7 +24,7 @@ const TeacherCrudForm = () => {
   };
   // CREATE USER
   const CreateTeacher = () => {
-    if (edit === "false") {
+    if (tedit === "false") {
       setTeachers((prevState) => [...prevState, { teacher }]);
       setTeacher({ name: "", teachID: "", teachSubj: "", password: "" });
     } else {
@@ -46,7 +46,7 @@ const TeacherCrudForm = () => {
     const i = currentTeacher.find((t) => t.teachID === teachID);
 
     setTeacher(i);
-    setEdit("true");
+    setTedit("true");
     setT(i);
     setIsDisabled(true);
   };
@@ -61,7 +61,7 @@ const TeacherCrudForm = () => {
   return (
     <div className="teachsection flex justify-center items-center mt-3">
       <table className="border-2 rounded ">
-        <thead className="bg-blue-500 text-white rounded">
+        <thead className="bg-orange-500 text-white rounded">
           <tr>
             <th className="border-2">Teacher Id</th>
             <th className="border-2">Teacher Name</th>
@@ -135,7 +135,7 @@ const TeacherCrudForm = () => {
           />
           <input
             type="text"
-            placeholder="Subject"
+            placeholder="Subjects"
             name="teachSubj"
             value={teachSubj}
             className="border-2 rounded p-2 my-2 w-full"

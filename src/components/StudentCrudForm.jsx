@@ -26,7 +26,8 @@ const StudentCrudForm = () => {
   // CREATE USER
   const CreateStudent = () => {
     if (edit === "false") {
-      setStudents((prevState) => [...prevState, { student }]);
+      setStudents([...students, student]);
+
       setStudent({ name: "", rollno: "", studyclass: "", password: "" });
     } else {
       students.find((u) => u.rollno === student.rollno)
