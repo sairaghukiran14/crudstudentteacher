@@ -113,7 +113,7 @@ const Login = () => {
             required
           />
           <button
-            className="bg-green-400 px-3 py-2 rounded"
+            className="bg-blue-400 px-3 py-2 rounded"
             type="button"
             onClick={() => {
               adminhandler();

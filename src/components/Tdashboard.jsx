@@ -1,9 +1,9 @@
-import { GoSignOut } from "react-icons/go";
 import React, { useContext } from "react";
 import { store } from "../App";
 import "./dashboard.css";
 import { useNavigate, useParams } from "react-router-dom";
 import StudentCrudForm from "./StudentCrudForm";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 const Tdashboard = () => {
   const navigate = useNavigate();
   const { teachers, SetTeachers } = useContext(store);
@@ -21,7 +21,7 @@ const Tdashboard = () => {
           className="signout flex justify-evenly items-center w-46 mr-2 bg-white p-1 rounded px-2"
           onClick={() => navigate("/")}
         >
-          <GoSignOut className="text-xl " />
+          <ExitToAppIcon className="text-xl " />
           <div className="ml-1">SignOut</div>
         </div>
       </div>
