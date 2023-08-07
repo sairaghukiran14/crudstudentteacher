@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import { GoSignOut } from "react-icons/go";
+
 import React from "react";
 import { useContext } from "react";
 import { store } from "../App";
 import "./dashboard.css";
 import { useNavigate } from "react-router-dom";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 const Sdashboard = () => {
   const navigate = useNavigate();
   const { students, setStudents } = useContext(store);
@@ -22,7 +23,7 @@ const Sdashboard = () => {
           className="signout flex justify-evenly items-center w-46 mr-2 bg-white p-1 rounded px-2"
           onClick={() => navigate("/")}
         >
-          <GoSignOut className="text-xl " />
+          <ExitToAppIcon className="text-xl " />
           <div className="ml-1">SignOut</div>
         </div>
       </div>
@@ -37,7 +38,6 @@ const Sdashboard = () => {
               <th className="border-2">Student Id</th>
               <th className="border-2">Student Name</th>
               <th className="border-2">Student Class</th>
-  
             </tr>
           </thead>
           <tbody>
@@ -46,7 +46,6 @@ const Sdashboard = () => {
                 <td className="border-2">{student.rollno}</td>
                 <td className="border-2">{student.name}</td>
                 <td className="border-2">{student.studyclass}</td>
-                
               </tr>
             ))}
           </tbody>
